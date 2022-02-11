@@ -1,8 +1,10 @@
 ﻿// Project1.cpp : 애플리케이션에 대한 진입점을 정의합니다.
 //
 
+#include "pch.h"
 #include "framework.h"
 #include "Project1.h"
+#include "CCore.h"
 
 #define MAX_LOADSTRING 100
 
@@ -39,6 +41,13 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
         return FALSE;
     }
 
+    if (FAILED(CCore::GetInst()->Init(g_hWnd, POINT{1280, 768})))
+    {
+        MessageBox(nullptr, L"Core 객체 초기화 실패", L"ERROR", MB_OK);
+
+        return FALSE;
+    }
+
     HACCEL hAccelTable = LoadAccelerators(hInstance, MAKEINTRESOURCE(IDC_PROJECT1));
 
     MSG msg;
@@ -61,6 +70,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
             //메세지가 없을때
             // Game 코드 수행
         // 디자인 패턴
+            CCore::GetInst()->Progress();
         }
 
         

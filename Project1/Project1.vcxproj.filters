@@ -17,6 +17,12 @@
     <Filter Include="Engine\01. Header">
       <UniqueIdentifier>{814471fc-738a-4ad2-8e47-2942860098b4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\03. Manager">
+      <UniqueIdentifier>{02ebfd6f-48ae-4ae8-8553-7858f3df8ac6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\04. Object">
+      <UniqueIdentifier>{e77496c0-25f8-4898-a091-e4a3ac25d694}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CCore.h">
@@ -33,6 +39,16 @@
     </ClInclude>
     <ClInclude Include="framework.h">
       <Filter>Default</Filter>
+    </ClInclude>
+    <ClInclude Include="define.h">
+      <Filter>Engine\01. Header</Filter>
+    </ClInclude>
+    <ClInclude Include="CKeyMgr.h">
+      <Filter>Engine\03. Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="CObject.h">
+      <Filter>Engine\04. Object</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -54,6 +70,12 @@
     </ClCompile>
     <ClCompile Include="Project1.cpp">
       <Filter>Default</Filter>
+    </ClCompile>
+    <ClCompile Include="CKeyMgr.cpp">
+      <Filter>Engine\03. Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="CObject.cpp">
+      <Filter>Engine\04. Object</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
