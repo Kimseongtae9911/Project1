@@ -1,5 +1,7 @@
 #include "pch.h"
 #include "CCore.h"
+#include "CKeyMgr.h"
+#include "CFrameMgr.h"
 #include "CObject.h"
 
 CObject g_obj;
@@ -29,25 +31,30 @@ int CCore::Init(HWND _hwnd, POINT _ptResolution)
 
 	m_hDC = GetDC(m_hWnd);
 	
-	g_obj.m_ptPos = POINT{ m_ptResolution.x / 2, m_ptResolution.y / 2};
-	g_obj.m_ptScale = POINT{ 100, 100 };
+	//manager 초기화
+	CFrameMgr::GetInst()->Init();
+	CKeyMgr::GetInst()->Init();
+
+
+	g_obj.SetPos(Vec2((float)(m_ptResolution.x / 2), (float)(m_ptResolution.y / 2)));
+	g_obj.SetScale(Vec2(100, 100));
 
 	return S_OK;
 }
 
 void CCore::Progress()
 {
-	static int callcount = 0;
-	++callcount;
+	//static int callcount = 0;
+	//++callcount;
 
-	static int iPrevCount = GetTickCount();
+	//static int iPrevCount = GetTickCount();
 
-	int iCurCount = GetTickCount();
-	if (iCurCount - iPrevCount > 1000)
-	{
-		iPrevCount = iCurCount;
-		callcount = 0;
-	}
+	//int iCurCount = GetTickCount();
+	//if (iCurCount - iPrevCount > 1000)
+	//{
+	//	iPrevCount = iCurCount;
+	//	callcount = 0;
+	//}
 
 	Update();
 	Render();
@@ -57,22 +64,29 @@ void CCore::Update()
 {
 	// 키입력이 메시지 기반이 아니라 지금 이 순간 무슨 키가 눌렸는지 확인 --> 비동기 키입출력 함수 사용
 	// 우리 윈도우가 포커싱 되어있는지 따질수가 없고 백그라운드에 항상 실행[단점]
+
+	Vec2 vPos = g_obj.GetPos();
 	if (GetAsyncKeyState(VK_LEFT) & 0x8000)  //지금 눌렸는지만 확인
 	{
-		g_obj.m_ptPos.x -= 1;
+		vPos.x -= 0.01f;
 	}
 
 	if (GetAsyncKeyState(VK_RIGHT) & 0x8000)
 	{
-		g_obj.m_ptPos.x += 1;
+		vPos.x += 0.01f;
 	}
+
+	g_obj.SetPos(vPos);
 }
 
 void CCore::Render()
 {
-	Rectangle(m_hDC, g_obj.m_ptPos.x - g_obj.m_ptScale.x / 2,
-		g_obj.m_ptPos.y - g_obj.m_ptScale.y / 2,
-		g_obj.m_ptPos.x + g_obj.m_ptScale.x / 2,
-		g_obj.m_ptPos.y + g_obj.m_ptScale.y / 2);
+	Vec2 vPos = g_obj.GetPos();
+	Vec2 vScale = g_obj.GetScale();
+
+	Rectangle(m_hDC, int(vPos.x - vScale.x / 2.f),
+		             int(vPos.y - vScale.y / 2.f),
+		             int(vPos.x + vScale.x / 2.f),
+		             int(vPos.y + vScale.y / 2.f));
 		
 }

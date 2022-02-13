@@ -23,6 +23,12 @@
     <Filter Include="Engine\04. Object">
       <UniqueIdentifier>{e77496c0-25f8-4898-a091-e4a3ac25d694}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\03. Manager\KeyMgr">
+      <UniqueIdentifier>{508e8320-bc62-417a-b5b2-52d6a4907828}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\03. Manager\FrameMgr">
+      <UniqueIdentifier>{edcda459-0667-4da5-8216-6656540fcab6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CCore.h">
@@ -43,12 +49,18 @@
     <ClInclude Include="define.h">
       <Filter>Engine\01. Header</Filter>
     </ClInclude>
-    <ClInclude Include="CKeyMgr.h">
-      <Filter>Engine\03. Manager</Filter>
-    </ClInclude>
     <ClInclude Include="pch.h" />
     <ClInclude Include="CObject.h">
       <Filter>Engine\04. Object</Filter>
+    </ClInclude>
+    <ClInclude Include="struct.h">
+      <Filter>Engine\01. Header</Filter>
+    </ClInclude>
+    <ClInclude Include="CKeyMgr.h">
+      <Filter>Engine\03. Manager\KeyMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="CFrameMgr.h">
+      <Filter>Engine\03. Manager\FrameMgr</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -71,11 +83,14 @@
     <ClCompile Include="Project1.cpp">
       <Filter>Default</Filter>
     </ClCompile>
-    <ClCompile Include="CKeyMgr.cpp">
-      <Filter>Engine\03. Manager</Filter>
-    </ClCompile>
     <ClCompile Include="CObject.cpp">
       <Filter>Engine\04. Object</Filter>
+    </ClCompile>
+    <ClCompile Include="CKeyMgr.cpp">
+      <Filter>Engine\03. Manager\KeyMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="CFrameMgr.cpp">
+      <Filter>Engine\03. Manager\FrameMgr</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -2,11 +2,9 @@
 
 class CKeyMgr
 {
-public:
 	SINGLE(CKeyMgr);
 
-private:
-	CKeyMgr();
-	~CKeyMgr();
+public:
+	void Init();
 };
 
