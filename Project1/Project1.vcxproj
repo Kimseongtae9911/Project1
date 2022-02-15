@@ -141,10 +141,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="CCore.h" />
+    <ClInclude Include="CFramework.h" />
     <ClInclude Include="CKeyMgr.h" />
     <ClInclude Include="CObject.h" />
     <ClInclude Include="CFrameMgr.h" />
+    <ClInclude Include="CScene.h" />
+    <ClInclude Include="CSceneMgr.h" />
+    <ClInclude Include="CStart.h" />
     <ClInclude Include="define.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="pch.h" />
@@ -154,10 +157,13 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CCore.cpp" />
+    <ClCompile Include="CFramework.cpp" />
     <ClCompile Include="CKeyMgr.cpp" />
     <ClCompile Include="CObject.cpp" />
     <ClCompile Include="CFrameMgr.cpp" />
+    <ClCompile Include="CScene.cpp" />
+    <ClCompile Include="CSceneMgr.cpp" />
+    <ClCompile Include="CStart.cpp" />
     <ClCompile Include="Project1.cpp" />
   </ItemGroup>
   <ItemGroup>

@@ -1,17 +1,17 @@
 #pragma once
 
 //
-//class CCore
+//class CFramework
 //{
 //private:
-//	static CCore* g_pInst;
+//	static CFramework* g_pInst;
 //
 //public:
-//	static CCore* GetInstance()
+//	static CFramework* GetInstance()
 //	{		
 //		if (g_pInst == nullptr) 
 //		{
-//			g_pInst = new CCore;
+//			g_pInst = new CFramework;
 //		}
 //
 //		return g_pInst;
@@ -27,18 +27,21 @@
 //	}
 //
 //private:
-//	CCore();
-//	~CCore();
+//	CFramework();
+//	~CFramework();
 //};
 
-class CCore
+class CFramework
 {
-	SINGLE(CCore);
+	SINGLE(CFramework);
 
 private:
 	HWND  m_hWnd;                         //  메인 윈도우 핸들
 	POINT  m_ptResolution;			  // 메인 윈도우 해상도
 	HDC m_hDC;								  // 메인 윈도우에 Draw 할 DC
+
+	HBITMAP m_hBit;
+	HDC m_memDC;
 
 public:
 	int Init(HWND _hwnd, POINT _ptResolution);
@@ -47,4 +50,7 @@ public:
 private:
 	void Update();
 	void Render();
+
+public:
+	HWND GetMainHwnd() { return m_hWnd; }
 };

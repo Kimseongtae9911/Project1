@@ -11,9 +11,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Engine\02. Core">
-      <UniqueIdentifier>{27f8f325-99d7-4c7e-a786-d27003c41e71}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Engine\01. Header">
       <UniqueIdentifier>{814471fc-738a-4ad2-8e47-2942860098b4}</UniqueIdentifier>
     </Filter>
@@ -29,11 +26,23 @@
     <Filter Include="Engine\03. Manager\FrameMgr">
       <UniqueIdentifier>{edcda459-0667-4da5-8216-6656540fcab6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\02. Framework">
+      <UniqueIdentifier>{27f8f325-99d7-4c7e-a786-d27003c41e71}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\05. Scene">
+      <UniqueIdentifier>{e89c3d99-00a2-45df-b037-0df29fb658b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\03. Manager\SceneMgr">
+      <UniqueIdentifier>{e4a9f47b-a016-4ae5-aa40-e0642d8bd73b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\05. Scene\01. Title">
+      <UniqueIdentifier>{04dbf45c-fb18-4118-9443-4fd8d1f0a16e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\05. Scene\02. Start">
+      <UniqueIdentifier>{a0a6107b-3fc9-489d-86f5-0f9b5114adad}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CCore.h">
-      <Filter>Engine\02. Core</Filter>
-    </ClInclude>
     <ClInclude Include="targetver.h">
       <Filter>Default</Filter>
     </ClInclude>
@@ -62,6 +71,18 @@
     <ClInclude Include="CFrameMgr.h">
       <Filter>Engine\03. Manager\FrameMgr</Filter>
     </ClInclude>
+    <ClInclude Include="CFramework.h">
+      <Filter>Engine\02. Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="CScene.h">
+      <Filter>Engine\05. Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="CSceneMgr.h">
+      <Filter>Engine\03. Manager\SceneMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="CStart.h">
+      <Filter>Engine\05. Scene\02. Start</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Project1.rc">
@@ -77,9 +98,6 @@
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CCore.cpp">
-      <Filter>Engine\02. Core</Filter>
-    </ClCompile>
     <ClCompile Include="Project1.cpp">
       <Filter>Default</Filter>
     </ClCompile>
@@ -91,6 +109,18 @@
     </ClCompile>
     <ClCompile Include="CFrameMgr.cpp">
       <Filter>Engine\03. Manager\FrameMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="CFramework.cpp">
+      <Filter>Engine\02. Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="CScene.cpp">
+      <Filter>Engine\05. Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="CSceneMgr.cpp">
+      <Filter>Engine\03. Manager\SceneMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="CStart.cpp">
+      <Filter>Engine\05. Scene\02. Start</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
