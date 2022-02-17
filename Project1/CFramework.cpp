@@ -58,21 +58,10 @@ void CFramework::Progress()
 	CKeyMgr::GetInst()->Update();
 	CSceneMgr::GetInst()->Update();
 
-	//Reder
-
-	// 초기화
+	// Double Buffering
 	Rectangle(m_memDC, -1, -1, m_ptResolution.x + 1, m_ptResolution.y + 1);
 
 	CSceneMgr::GetInst()->Render(m_memDC);
-
-	// 그리기
-	Vec2 vPos = g_obj.GetPos();
-	Vec2 vScale = g_obj.GetScale();
-
-	Rectangle(m_memDC, int(vPos.x - vScale.x / 2.f),
-		int(vPos.y - vScale.y),
-		int(vPos.x + vScale.x),
-		int(vPos.y + vScale.y));
 
 	BitBlt(m_hDC, 0, 0, m_ptResolution.x, m_ptResolution.y, m_memDC, 0, 0, SRCCOPY);
 }
