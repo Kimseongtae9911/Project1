@@ -1,9 +1,6 @@
-﻿// Project1.cpp : 애플리케이션에 대한 진입점을 정의합니다.
-//
-
-#include "pch.h"
+﻿#include "pch.h"
 #include "framework.h"
-#include "Project1.h"
+#include "Resource.h"
 #include "CFramework.h"
 
 #define MAX_LOADSTRING 100
@@ -67,9 +64,6 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
         }
         else
         {
-            //메세지가 없을때
-            // Game 코드 수행
-        // 디자인 패턴
             CFramework::GetInst()->Progress();
         }
 

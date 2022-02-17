@@ -24,7 +24,19 @@ void CSceneMgr::Init()
 {
 	// Scene Create
 	m_arrScene[(UINT)SCENE_TYPE::START] = new CStart;
+	m_arrScene[(UINT)SCENE_TYPE::START]->SetName(L"Start Scene");
 
 	// Current Scene
 	m_pCurScene = m_arrScene[(UINT)SCENE_TYPE::START];
+	m_pCurScene->Enter();
+}
+
+void CSceneMgr::Update()
+{
+	m_pCurScene->Update();
+}
+
+void CSceneMgr::Render(HDC _dc)
+{
+	m_pCurScene->Render(_dc);
 }

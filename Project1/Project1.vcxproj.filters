@@ -49,9 +49,6 @@
     <ClInclude Include="Resource.h">
       <Filter>Default</Filter>
     </ClInclude>
-    <ClInclude Include="Project1.h">
-      <Filter>Default</Filter>
-    </ClInclude>
     <ClInclude Include="framework.h">
       <Filter>Default</Filter>
     </ClInclude>
@@ -98,9 +95,6 @@
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Project1.cpp">
-      <Filter>Default</Filter>
-    </ClCompile>
     <ClCompile Include="CObject.cpp">
       <Filter>Engine\04. Object</Filter>
     </ClCompile>
@@ -122,5 +116,6 @@
     <ClCompile Include="CStart.cpp">
       <Filter>Engine\05. Scene\02. Start</Filter>
     </ClCompile>
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
 </Project>

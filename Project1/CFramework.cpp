@@ -49,9 +49,6 @@ int CFramework::Init(HWND _hwnd, POINT _ptResolution)
 	CKeyMgr::GetInst()->Init();
 	CSceneMgr::GetInst()->Init();
 
-	g_obj.SetPos(Vec2((float)(m_ptResolution.x / 2), (float)(m_ptResolution.y / 2)));
-	g_obj.SetScale(Vec2(100, 100));
-
 	return S_OK;
 }
 
@@ -59,50 +56,23 @@ void CFramework::Progress()
 {
 	CFrameMgr::GetInst()->Update();
 	CKeyMgr::GetInst()->Update();
-	//CSceneMgr::GetInst()->Update();
+	CSceneMgr::GetInst()->Update();
 
-	Update();
-	Render();
-}
+	//Reder
 
-void CFramework::Update()
-{
-	// 키입력이 메시지 기반이 아니라 지금 이 순간 무슨 키가 눌렸는지 확인 --> 비동기 키입출력 함수 사용
-	// 우리 윈도우가 포커싱 되어있는지 따질수가 없고 백그라운드에 항상 실행[단점]
-
-	Vec2 vPos = g_obj.GetPos();
-	if (CKeyMgr::GetInst()->GetKeyState(KEY::LEFT) == KEY_STATE::KDOWN)  //지금 눌렸는지만 확인
-	{
-		//vPos.x -= 100.f * CFrameMgr::GetInst()->GetfDT();
-		vPos.x -= 100.f * fDeltaTime;
-	}
-
-	if (CKeyMgr::GetInst()->GetKeyState(KEY::RIGHT) == KEY_STATE::KHOLD)
-	{
-		vPos.x += 100.f * fDeltaTime;
-	}
-
-	g_obj.SetPos(vPos);
-}
-
-void CFramework::Render()
-{
 	// 초기화
 	Rectangle(m_memDC, -1, -1, m_ptResolution.x + 1, m_ptResolution.y + 1);
-					 
+
+	CSceneMgr::GetInst()->Render(m_memDC);
+
 	// 그리기
 	Vec2 vPos = g_obj.GetPos();
 	Vec2 vScale = g_obj.GetScale();
-	
-	Rectangle(m_memDC, int(vPos.x - vScale.x / 2.f),
-		             int(vPos.y - vScale.y / 2.f),
-		             int(vPos.x + vScale.x / 2.f),
-		             int(vPos.y + vScale.y / 2.f));
 
 	Rectangle(m_memDC, int(vPos.x - vScale.x / 2.f),
 		int(vPos.y - vScale.y),
 		int(vPos.x + vScale.x),
 		int(vPos.y + vScale.y));
-	
+
 	BitBlt(m_hDC, 0, 0, m_ptResolution.x, m_ptResolution.y, m_memDC, 0, 0, SRCCOPY);
 }
