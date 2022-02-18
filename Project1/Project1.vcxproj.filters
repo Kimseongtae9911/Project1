@@ -80,9 +80,6 @@
     <ClInclude Include="CFramework.h">
       <Filter>Engine\02. Framework</Filter>
     </ClInclude>
-    <ClInclude Include="CScene.h">
-      <Filter>Engine\05. Scene</Filter>
-    </ClInclude>
     <ClInclude Include="CSceneMgr.h">
       <Filter>Engine\03. Manager\SceneMgr</Filter>
     </ClInclude>
@@ -97,6 +94,9 @@
     </ClInclude>
     <ClInclude Include="CMissile.h">
       <Filter>Engine\04. Object\Weapon</Filter>
+    </ClInclude>
+    <ClInclude Include="CScene.h">
+      <Filter>Engine\05. Scene</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -125,9 +125,6 @@
     <ClCompile Include="CFramework.cpp">
       <Filter>Engine\02. Framework</Filter>
     </ClCompile>
-    <ClCompile Include="CScene.cpp">
-      <Filter>Engine\05. Scene</Filter>
-    </ClCompile>
     <ClCompile Include="CSceneMgr.cpp">
       <Filter>Engine\03. Manager\SceneMgr</Filter>
     </ClCompile>
@@ -143,6 +140,9 @@
     </ClCompile>
     <ClCompile Include="CMissile.cpp">
       <Filter>Engine\04. Object\Weapon</Filter>
+    </ClCompile>
+    <ClCompile Include="CScene.cpp">
+      <Filter>Engine\05. Scene</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

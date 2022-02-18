@@ -8,7 +8,11 @@ private:
 	float m_fSpeed;
 	
 public:
+	void SetDir(int _iDir) { m_iDir = _iDir;}	
+
+public:
 	virtual void Update();
+	virtual void Render(HDC _dc);
 
 public:
 	CMissile();

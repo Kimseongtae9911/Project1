@@ -1,8 +1,10 @@
 #include "pch.h"
 #include "CPlayer.h"
+#include "CScene.h"
+#include "CSceneMgr.h"
 #include "CKeyMgr.h"
 #include "CFrameMgr.h"
-
+#include "CMissile.h"
 
 void CPlayer::Update()
 {
@@ -24,6 +26,25 @@ void CPlayer::Update()
 	{
 		vPos.x += 200.f * fDeltaTime;
 	}
+	if (CKeyMgr::GetInst()->GetKeyState(KEY::SPACE) == KEY_STATE::KDOWN)
+	{
+		CreateMissile();
+	}
 
 	SetPos(vPos);
+}
+
+void CPlayer::CreateMissile()
+{
+	Vec2 vMissilePos = GetPos();
+	vMissilePos.y -= GetScale().y / 2.f;
+
+	CMissile* pMissile = new CMissile;
+
+	pMissile->SetPos(vMissilePos);
+	pMissile->SetScale(Vec2(25.f, 25.f));
+	pMissile->SetDir(-1);
+	
+	CScene* pCurScene = CSceneMgr::GetInst()->GetCurScene();
+	pCurScene->AddObject(pMissile, GROUP_TYPE::DEFAULT);
 }
