@@ -6,8 +6,6 @@
 #include "CSceneMgr.h"
 #include "CObject.h"
 
-CObject g_obj;
-
 CFramework::CFramework()
 	: m_hWnd(0)
 	, m_ptResolution{}

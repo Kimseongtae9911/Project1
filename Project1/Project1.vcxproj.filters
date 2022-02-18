@@ -41,6 +41,15 @@
     <Filter Include="Engine\05. Scene\02. Start">
       <UniqueIdentifier>{a0a6107b-3fc9-489d-86f5-0f9b5114adad}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\04. Object\Player">
+      <UniqueIdentifier>{556dd310-e94d-4891-afc3-d55f87dcf7f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\04. Object\Monster">
+      <UniqueIdentifier>{320a9744-ef69-4e19-a87c-2313a09dbd15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\04. Object\Weapon">
+      <UniqueIdentifier>{0acdf348-eb04-495f-907b-6f01eacd3a09}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="targetver.h">
@@ -80,6 +89,15 @@
     <ClInclude Include="CStart.h">
       <Filter>Engine\05. Scene\02. Start</Filter>
     </ClInclude>
+    <ClInclude Include="CPlayer.h">
+      <Filter>Engine\04. Object\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="CMonster.h">
+      <Filter>Engine\04. Object\Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="CMissile.h">
+      <Filter>Engine\04. Object\Weapon</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Project1.rc">
@@ -117,5 +135,14 @@
       <Filter>Engine\05. Scene\02. Start</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="CPlayer.cpp">
+      <Filter>Engine\04. Object\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="CMonster.cpp">
+      <Filter>Engine\04. Object\Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="CMissile.cpp">
+      <Filter>Engine\04. Object\Weapon</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
