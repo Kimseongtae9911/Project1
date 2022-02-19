@@ -13,6 +13,8 @@
 #define fDeltaTime CFrameMgr::GetInst()->GetfDT()
 #define DelatTime CFrameMgr::GetInst()->GetDT()
 
+#define PI 3.1415926535f
+
 enum class GROUP_TYPE
 {
 	DEFAULT, // 0

@@ -4,11 +4,17 @@
 class CMissile : public CObject
 {
 private:
-	int m_iDir;
+	float m_fTheta;
 	float m_fSpeed;
-	
+	Vec2 m_vDir;
+
 public:
-	void SetDir(int _iDir) { m_iDir = _iDir;}	
+	void SetDir(float _fTheta) { m_fTheta = _fTheta;}	
+	void SetDir(Vec2 _vDir) 
+	{ 
+		m_vDir = _vDir; 
+		m_vDir.Normalize();
+	}
 
 public:
 	virtual void Update();

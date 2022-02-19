@@ -8,6 +8,9 @@ private:
 	float m_fDistance;
 	int m_iDir;
 
+private:
+	void CreateMissile();
+
 public:
 	float GetSpeed() { return m_fSpeed; }
 	void SetSpeed(float _f) { m_fSpeed = _f; }

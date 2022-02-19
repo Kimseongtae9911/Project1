@@ -4,8 +4,10 @@
 
 CMissile::CMissile()
 	: m_fSpeed(400.f)
-	, m_iDir(1)
+	, m_fTheta(PI / 2.f)
+	, m_vDir(1.f, 1.f)
 {
+	m_vDir.Normalize();
 }
 
 CMissile::~CMissile()
@@ -16,7 +18,11 @@ void CMissile::Update()
 {
 	Vec2 vPos = GetPos();
 
-	vPos.y += m_fSpeed * (float)m_iDir * fDeltaTime;
+	//vPos.x += m_fSpeed * cosf(m_fTheta) * fDeltaTime;
+	//vPos.y -= m_fSpeed * sinf(m_fTheta) * fDeltaTime;
+
+	vPos.x += m_fSpeed * m_vDir.x * fDeltaTime;
+	vPos.y += m_fSpeed * m_vDir.y * fDeltaTime;
 
 	SetPos(vPos);
 }
