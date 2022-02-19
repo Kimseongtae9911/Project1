@@ -34,7 +34,10 @@ void CFrameMgr::Update()
 	m_dDT = (double)(m_lICurCount.QuadPart - m_lIPrevCount.QuadPart) / (double)m_LIFrequency.QuadPart;
 
 	m_lIPrevCount = m_lICurCount;
+}
 
+void CFrameMgr::Render()
+{
 	++m_iCallCount;
 	m_dAcc += m_dDT;
 

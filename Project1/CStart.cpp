@@ -4,8 +4,8 @@
 #include "CObject.h"
 #include "CPlayer.h"
 #include "CMonster.h"
-
-
+#include "CTexture.h"
+#include "CFilePathMgr.h"
 CStart::CStart()
 {
 }
@@ -16,6 +16,14 @@ CStart::~CStart()
 
 void CStart::Enter()
 {
+	CTexture* pTex = new CTexture;
+
+	wstring strFilepath = CFilePathMgr::GetInst()->GetFilePath();
+	strFilepath += L"Player.bmp";
+	pTex->Load(strFilepath);
+
+	delete pTex;
+
 	CObject* pObj = new CPlayer;
 	pObj->SetPos(Vec2(640.f, 384.f));
 	pObj->SetScale(Vec2(100.f, 100.f));

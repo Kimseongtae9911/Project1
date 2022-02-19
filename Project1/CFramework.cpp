@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "CFramework.h"
 
+#include "CFilePathMgr.h"
 #include "CFrameMgr.h"
 #include "CKeyMgr.h"
 #include "CSceneMgr.h"
@@ -43,6 +44,7 @@ int CFramework::Init(HWND _hwnd, POINT _ptResolution)
 	DeleteObject(hOldBit);
 
 	//manager ÃÊ±âÈ­
+	CFilePathMgr::GetInst()->Init();
 	CFrameMgr::GetInst()->Init();
 	CKeyMgr::GetInst()->Init();
 	CSceneMgr::GetInst()->Init();
@@ -62,4 +64,6 @@ void CFramework::Progress()
 	CSceneMgr::GetInst()->Render(m_memDC);
 
 	BitBlt(m_hDC, 0, 0, m_ptResolution.x, m_ptResolution.y, m_memDC, 0, 0, SRCCOPY);
+
+	//CFrameMgr::GetInst()->Render();
 }
