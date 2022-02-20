@@ -29,5 +29,5 @@ void CFilePathMgr::Init()
 
 	wcscat_s(m_szFilePath, 255, L"\\Resource\\");
 
-	//SetWindowText(CFramework::GetInst()->GetMainHwnd(), m_strFilePath);
+	//SetWindowText(CFramework::GetInst()->GetMainHwnd(), m_szFilePath);
 }

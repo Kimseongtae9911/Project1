@@ -62,6 +62,9 @@
     <Filter Include="Engine\03. Manager\FilePathMgr">
       <UniqueIdentifier>{ce4a52cb-bab8-4566-a3a3-804cdc1c1e27}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\03. Manager\ResourceMgr">
+      <UniqueIdentifier>{5554a0ef-6901-42d6-bc15-4c50d66de8b4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="targetver.h">
@@ -122,6 +125,9 @@
     <ClInclude Include="CFilePathMgr.h">
       <Filter>Engine\03. Manager\FilePathMgr</Filter>
     </ClInclude>
+    <ClInclude Include="CResourceMgr.h">
+      <Filter>Engine\03. Manager\ResourceMgr</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Project1.rc">
@@ -179,6 +185,9 @@
     </ClCompile>
     <ClCompile Include="CFilePathMgr.cpp">
       <Filter>Engine\03. Manager\FilePathMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="CResourceMgr.cpp">
+      <Filter>Engine\03. Manager\ResourceMgr</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
