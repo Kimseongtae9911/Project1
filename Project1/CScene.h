@@ -13,6 +13,7 @@ public:
 	const wstring& GetName() { return m_strName; }
 
 	void Update();
+	void FinalUpdate();
 	void Render(HDC _dc);
 
 	virtual void Enter() = 0; // Scene ÁøÀÔ

@@ -65,6 +65,12 @@
     <Filter Include="Engine\03. Manager\ResourceMgr">
       <UniqueIdentifier>{5554a0ef-6901-42d6-bc15-4c50d66de8b4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\07. Component">
+      <UniqueIdentifier>{32b16064-89b5-4ef8-b028-836c5bd46dc8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\07. Component\Collider">
+      <UniqueIdentifier>{2467d81d-8360-4e23-82d6-1d80e1ac2586}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="targetver.h">
@@ -128,6 +134,9 @@
     <ClInclude Include="CResourceMgr.h">
       <Filter>Engine\03. Manager\ResourceMgr</Filter>
     </ClInclude>
+    <ClInclude Include="CCollider.h">
+      <Filter>Engine\07. Component\Collider</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Project1.rc">
@@ -188,6 +197,9 @@
     </ClCompile>
     <ClCompile Include="CResourceMgr.cpp">
       <Filter>Engine\03. Manager\ResourceMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="CCollider.cpp">
+      <Filter>Engine\07. Component\Collider</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
