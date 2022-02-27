@@ -16,7 +16,8 @@ CPlayer::CPlayer()
 	m_pTex = CResourceMgr::GetInst()->LoadTexture(L"Player", L"Test.bmp");
 
 	CreateCollider();
-	GetCollider()->SetScale(Vec2(100.f, 100.f));
+	GetCollider()->SetOffsetPos(Vec2(0.f, 0.f));
+	GetCollider()->SetScale(Vec2(15.f, 30.f));
 }
 
 CPlayer::~CPlayer()
@@ -80,6 +81,6 @@ void CPlayer::CreateMissile()
 	pMissile->SetDir(Vec2(-1.f, -7.f));
 	
 	CScene* pCurScene = CSceneMgr::GetInst()->GetCurScene();
-	pCurScene->AddObject(pMissile, GROUP_TYPE::DEFAULT);
+	pCurScene->AddObject(pMissile, GROUP_TYPE::WEAPON);
 }
 

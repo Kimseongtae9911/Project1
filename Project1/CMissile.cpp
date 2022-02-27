@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "CMissile.h"
 #include "CFrameMgr.h"
+#include "CCollider.h"
 
 CMissile::CMissile()
 	: m_fSpeed(400.f)
@@ -10,6 +11,8 @@ CMissile::CMissile()
 	m_vDir.Normalize();
 
 	CreateCollider();
+	GetCollider()->SetOffsetPos(Vec2(0.f, 0.f));
+	GetCollider()->SetScale(Vec2(25.f, 25.f));
 }
 
 CMissile::~CMissile()
@@ -38,4 +41,6 @@ void CMissile::Render(HDC _dc)
 				 (int)(vPos.y - vScale.y / 2.f),
 				 (int)(vPos.x + vScale.x / 2.f),
 				 (int)(vPos.y + vScale.y / 2.f));
+
+	Component_Render(_dc);
 }

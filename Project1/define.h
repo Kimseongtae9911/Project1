@@ -18,8 +18,9 @@
 enum class GROUP_TYPE
 {
 	DEFAULT, // 0
-	PLAYER,  // 1
-	MONSTER, // 2
+	MONSTER, // 1
+	WEAPON,  // 2
+	PLAYER,  // 3	
 
 
 	END = 3

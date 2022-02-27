@@ -6,6 +6,8 @@
 #include "CMonster.h"
 #include "CTexture.h"
 #include "CFilePathMgr.h"
+#include "CCollideMgr.h"
+
 CStart::CStart()
 {
 }
@@ -37,8 +39,15 @@ void CStart::Enter()
 		pMonObj->SetScale(Vec2(50.f, 50.f));
 		AddObject(pMonObj, GROUP_TYPE::MONSTER);
 	}
+
+	// Collide Group Select
+	// Player and Monster,  Monster and Weapon
+	CCollideMgr::GetInst()->CheckGroup(GROUP_TYPE::PLAYER, GROUP_TYPE::MONSTER);
+	CCollideMgr::GetInst()->CheckGroup(GROUP_TYPE::MONSTER, GROUP_TYPE::WEAPON);
 }
 
 void CStart::Exit()
 {
+	// Collide Group Cancel
+	CCollideMgr::GetInst()->Reset();
 }

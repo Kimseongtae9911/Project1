@@ -4,6 +4,7 @@
 #include "CSceneMgr.h"
 #include "CScene.h"
 #include "CMissile.h"
+#include "CCollider.h"
 
 CMonster::CMonster()
 	: m_vCenterPos(Vec2(0.f, 0.f))
@@ -12,6 +13,8 @@ CMonster::CMonster()
 	, m_iDir(1)
 {
 	CreateCollider();
+	GetCollider()->SetOffsetPos(Vec2(0.f, 0.f));
+	GetCollider()->SetScale(Vec2(40.f, 40.f));
 }
 
 CMonster::~CMonster()

@@ -71,6 +71,9 @@
     <Filter Include="Engine\07. Component\Collider">
       <UniqueIdentifier>{2467d81d-8360-4e23-82d6-1d80e1ac2586}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\03. Manager\CollideMgr">
+      <UniqueIdentifier>{1ad6da55-94d4-4352-857e-86b45a5e7634}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="targetver.h">
@@ -137,6 +140,9 @@
     <ClInclude Include="CCollider.h">
       <Filter>Engine\07. Component\Collider</Filter>
     </ClInclude>
+    <ClInclude Include="CCollideMgr.h">
+      <Filter>Engine\03. Manager\CollideMgr</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Project1.rc">
@@ -200,6 +206,9 @@
     </ClCompile>
     <ClCompile Include="CCollider.cpp">
       <Filter>Engine\07. Component\Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="CCollideMgr.cpp">
+      <Filter>Engine\03. Manager\CollideMgr</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
