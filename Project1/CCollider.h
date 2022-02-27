@@ -6,11 +6,13 @@ class CCollider
 {
 
 private:
+	static UINT g_iNextID;
+
 	CObject* m_pObject;
 	Vec2 m_vOffsetPos;   // 오브젝트로부터 상대적인 위치(Collider의 위치)
 	Vec2 m_vFinalPos;    // 오브젝트의 최종위치
-
 	Vec2 m_vScale;		 // 충돌체의 크기
+	UINT m_iID;			 // Collider unique ID
 
 public:
 	void SetOffsetPos(Vec2 _vPos) { m_vOffsetPos = _vPos; }

@@ -3,9 +3,11 @@
 #include "CFramework.h"
 #include "CObject.h"
 
+UINT CCollider::g_iNextID = 0;
 
 CCollider::CCollider()
 	: m_pObject(nullptr)
+	, m_iID(g_iNextID++)
 {
 }
 
