@@ -16,7 +16,7 @@ void CFilePathMgr::Init()
 {
 	GetCurrentDirectory(255, m_szFilePath);
 	
-	int iLen = wcslen(m_szFilePath);
+	int iLen = (int)wcslen(m_szFilePath);
 
 	for (int i = iLen - 1; i >= 0; --i)
 	{

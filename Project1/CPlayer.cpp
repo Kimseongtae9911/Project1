@@ -8,6 +8,7 @@
 #include "CResourceMgr.h"
 #include "CMissile.h"
 #include "CTexture.h"
+#include "CCollider.h"
 
 CPlayer::CPlayer()
 	: m_pTex(nullptr)
@@ -15,6 +16,7 @@ CPlayer::CPlayer()
 	m_pTex = CResourceMgr::GetInst()->LoadTexture(L"Player", L"Test.bmp");
 
 	CreateCollider();
+	GetCollider()->SetScale(Vec2(100.f, 100.f));
 }
 
 CPlayer::~CPlayer()
@@ -63,6 +65,8 @@ void CPlayer::Render(HDC _dc)
 	//BitBlt(_dc, iLeft, iTop, iWidth, iHeight, m_pTex->GetDC(), 0, 0, SRCCOPY);
 
 	TransparentBlt(_dc, iLeft, iTop, iWidth, iHeight, m_pTex->GetDC(), 0, 0, iWidth, iHeight, RGB(255, 0, 255));
+
+	Component_Render(_dc);
 }
 
 void CPlayer::CreateMissile()

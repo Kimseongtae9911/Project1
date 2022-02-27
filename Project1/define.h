@@ -33,3 +33,19 @@ enum class SCENE_TYPE
 
 	END = 3
 };
+
+enum class BRUSH_TYPE
+{
+	HOLLOW,
+	
+	END
+};
+
+enum class PEN_TYPE
+{
+	RED,
+	GREEN,
+	BLUE,
+	
+	END
+};

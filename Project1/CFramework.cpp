@@ -13,6 +13,8 @@ CFramework::CFramework()
 	, m_hDC(0)
 	, m_hBit(0)
 	, m_memDC(0)
+	, m_arrBrush{}
+	, m_arrPen{}
 {
 
 }
@@ -23,6 +25,12 @@ CFramework::~CFramework()
 
 	DeleteDC(m_memDC);
 	DeleteObject(m_hBit);
+	
+	for (int i = 0; i < (UINT)PEN_TYPE::END; ++i)
+	{
+		DeleteObject(m_arrPen[i]);
+	}
+
 }
 
 int CFramework::Init(HWND _hwnd, POINT _ptResolution)
@@ -42,6 +50,8 @@ int CFramework::Init(HWND _hwnd, POINT _ptResolution)
 
 	HBITMAP hOldBit = (HBITMAP)SelectObject(m_memDC, m_hBit);
 	DeleteObject(hOldBit);
+
+	CreateGDIObject();
 
 	//manager ÃÊ±âÈ­
 	CFilePathMgr::GetInst()->Init();
@@ -66,4 +76,12 @@ void CFramework::Progress()
 	BitBlt(m_hDC, 0, 0, m_ptResolution.x, m_ptResolution.y, m_memDC, 0, 0, SRCCOPY);
 
 	//CFrameMgr::GetInst()->Render();
+}
+
+void CFramework::CreateGDIObject()
+{
+	m_arrBrush[(UINT)BRUSH_TYPE::HOLLOW] = (HBRUSH)GetStockObject(HOLLOW_BRUSH);
+	m_arrPen[(UINT)PEN_TYPE::RED] = CreatePen(PS_SOLID, 1, RGB(255, 0, 0));
+	m_arrPen[(UINT)PEN_TYPE::GREEN] = CreatePen(PS_SOLID, 1, RGB(0, 255, 0));
+	m_arrPen[(UINT)PEN_TYPE::BLUE] = CreatePen(PS_SOLID, 1, RGB(0, 0, 255));
 }
